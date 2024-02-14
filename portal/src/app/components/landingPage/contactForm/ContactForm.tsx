@@ -1,4 +1,3 @@
-// Import necessary components and hooks
 import React, { FC } from 'react';
 import { Box, Grid, Typography, Theme } from '@mui/material';
 import { makeStyles } from 'tss-react/mui';
