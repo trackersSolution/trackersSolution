@@ -1,14 +1,27 @@
-'use client';
-import React, { FC, useState } from 'react';
-import { Theme, AppBar, Toolbar, IconButton, Typography, Grid, Drawer, List, ListItem, ListItemText, useMediaQuery } from '@mui/material';
-import { makeStyles } from 'tss-react/mui';
-import { Menu } from '@mui/icons-material';
-import Image from 'next/image';
-
+"use client";
+import React, { FC, useState } from "react";
+import {
+  Theme,
+  AppBar,
+  Toolbar,
+  IconButton,
+  Typography,
+  Grid,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  useMediaQuery,
+} from "@mui/material";
+import { makeStyles } from "tss-react/mui";
+import { Menu } from "@mui/icons-material";
+import Image from "next/image";
+import logo from "../../../../../../public/logo.svg";
+import Link from "next/link";
 const useStyles = makeStyles()((_theme: Theme) => ({
   root: {},
   drawerPaper: {
-    width: '60%',
+    width: "60%",
   },
 }));
 
@@ -18,7 +31,7 @@ export interface HeaderProps {
 
 const Header: FC<HeaderProps> = (props) => {
   const { classes } = useStyles();
-  const isMobile = useMediaQuery('(max-width:600px)');
+  const isMobile = useMediaQuery("(max-width:600px)");
 
   // State for handling drawer open/close
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -30,22 +43,29 @@ const Header: FC<HeaderProps> = (props) => {
 
   return (
     <>
-      <AppBar position="fixed" sx={{ color: 'white', backgroundColor: '#014189' }}>
+      <AppBar
+        position="fixed"
+        sx={{ color: "black", backgroundColor: "white" }}
+      >
         <Toolbar>
           {isMobile && (
-            <IconButton edge="start" color="inherit" aria-label="menu" onClick={toggleDrawer(true)}>
+            <IconButton
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              onClick={toggleDrawer(true)}
+            >
               <Menu />
             </IconButton>
           )}
 
-          <Image src="/portal/public/logo.svg" height={20} width={10} alt="logo" />
-          
-          {/* Display menu items in AppBar for larger screens */}
+          <Image src={logo} height={100} width={200} alt="logo" />
+
           {!isMobile && (
             <Grid
               container
               spacing={{ xs: 1, md: 2 }}
-              direction={{ xs: 'column', md: 'row' }}
+              direction={{ xs: "column", md: "row" }}
               justifyContent="center"
               alignItems="center"
               alignContent="stretch"
@@ -53,22 +73,22 @@ const Header: FC<HeaderProps> = (props) => {
               paddingLeft={20}
             >
               <Grid item xs={12} md={2}>
-                HOME
+                <Link href="/">HOME</Link>
               </Grid>
               <Grid item xs={12} md={2}>
-                SERVICES
+                <Link href="/services">SERVICES</Link>
               </Grid>
               <Grid item xs={12} md={2}>
-                INDUSTRY
+                <Link href="/industry">INDUSTRY</Link>
               </Grid>
               <Grid item xs={12} md={2}>
-                BLOG
+                <Link href="/blog">BLOG</Link>
               </Grid>
               <Grid item xs={12} md={2}>
-                ABOUT US
+                <Link href="/about">ABOUT US</Link>
               </Grid>
               <Grid item xs={12} md={2}>
-                CONTACT US
+                <Link href="/contact">CONTACT US</Link>
               </Grid>
             </Grid>
           )}
@@ -83,8 +103,15 @@ const Header: FC<HeaderProps> = (props) => {
         classes={{ paper: classes.drawerPaper }}
       >
         <List>
-          {['HOME', 'SERVICES', 'INDUSTRY', 'BLOG', 'ABOUT US', 'CONTACT US'].map((text, index) => (
-            <ListItem  key={text}>
+          {[
+            "HOME",
+            "SERVICES",
+            "INDUSTRY",
+            "BLOG",
+            "ABOUT US",
+            "CONTACT US",
+          ].map((text, index) => (
+            <ListItem key={text}>
               <ListItemText primary={text} />
             </ListItem>
           ))}

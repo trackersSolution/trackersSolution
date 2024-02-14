@@ -1,10 +1,43 @@
 import React, { FC } from 'react';
-import { Box, Grid, Typography, Theme } from '@mui/material';
-import { makeStyles } from 'tss-react/mui';
+import { Box, Grid, Typography, Theme, CSSObject } from '@mui/material';
 import Form from './Form';
-
-const useStyles = makeStyles((_theme: Theme) => ({
-  root: {},
+import { makeStyles } from 'tss-react/mui';
+import contactusBackground from '../../../../../public/contactUsbackground.svg'
+import MapIcon from '@mui/icons-material/Map';
+import PhoneIcon from '@mui/icons-material/Phone';
+import MailIcon from '@mui/icons-material/Mail';
+const useStyles = makeStyles()((theme: Theme)=> ({
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100%',
+    width: '100%',
+    borderRadius: '10px',
+    boxShadow: '0 0 10px rgba(0,0,0,0.1)',
+    // marginTop: { xs: '100px', md: '400px' },
+  },
+  formContainer: {
+    maxWidth: '100%',
+    padding: '20px',
+  },
+  infoContainer: {
+    background: `url(${contactusBackground})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    borderRadius: '8px',
+    color: 'black',
+    padding: '20px',
+    margin: '20px',
+    width: '100%',
+    maxWidth: '500px',
+    boxShadow: '0 4px 8px rgba(0,0,0,0.1)', // Add box shadow for better depth
+    textAlign: 'center', // Center text content
+  },
+  infoText: {
+    marginBottom: '80px', // Add some spacing between text elements
+  },
 }));
 
 export interface ContactFormProps {
@@ -12,63 +45,40 @@ export interface ContactFormProps {
 }
 
 const ContactForm: FC<ContactFormProps> = (props) => {
-  const { classes } = useStyles();
+  const {classes} = useStyles();
 
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100%',
-        width: '100%',
-        borderRadius: '10px',
-        boxShadow: '0 0 10px rgba(0,0,0,0.1)',
-        marginTop: { xs: '100px', md: '400px' }, // Responsive margin-top
-        marginLeft: '50px',
-      }}
-    >
+    <Box className={classes.root}>
       <Typography variant="h2" color="initial">
         It's Very Easy To Contact Us
       </Typography>
       <Grid
         container
-        spacing={1}
-        direction="row"
-        justifyContent="flex-start"
-        alignItems="flex-start"
+        spacing={3}
+        direction={{ xs: 'column', md: 'row' }}
+        justifyContent="center"
+        alignItems="stretch"
         alignContent="stretch"
         wrap="wrap"
       >
-        <Grid xs={12} md={6}>
-          <Box>
-            <Form />
-          </Box>
+        <Grid item xs={12} md={6} className={classes.formContainer}>
+          <Form />
         </Grid>
-        <Grid xs={12} md={6}>
-          <Box
-            mt={4}
-            p={4}
-            sx={{
-              background: 'linear-gradient(to right, #ff6666, #ff4d4d)',
-              borderRadius: '8px',
-              color: 'white',
-              height: '420px',
-              margin: '40px',
-              width: '70%',
-            }}
-          >
-            <Typography variant="h5" gutterBottom>
+        <Grid item xs={12} md={6}>
+          <Box className={classes.infoContainer}>
+          <MapIcon/>
+          <Typography variant="h5" className={classes.infoText} gutterBottom>
               Our Information
             </Typography>
-            <Typography>
+            <Typography className={classes.infoText}>
               <strong>Address:</strong> 123 Main Street, Cityville
             </Typography>
-            <Typography>
+            <PhoneIcon/>
+            <Typography className={classes.infoText}>
               <strong>Phone:</strong> +1 (555) 123-4567
             </Typography>
-            <Typography>
+            <MailIcon/>
+            <Typography className={classes.infoText}>
               <strong>Email:</strong> info@example.com
             </Typography>
           </Box>

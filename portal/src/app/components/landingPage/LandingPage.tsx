@@ -19,7 +19,7 @@ export interface LandingPageProps {
 }
 
 const LandingPage: FC<LandingPageProps> = ( props ) => {
-// const { classes } = useStyles();
+const { classes } = useStyles();
 
   return (
   <>
