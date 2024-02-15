@@ -23,6 +23,14 @@ const useStyles = makeStyles()((_theme: Theme) => ({
   drawerPaper: {
     width: "60%",
   },
+  header_navlinks: {
+    fontSize: "17px",
+    fontWeight: 600,
+    fontFamily: "system-ui",
+  },
+  logo_image: {
+    objectFit: "contain",
+  },
 }));
 
 export interface HeaderProps {
@@ -57,7 +65,7 @@ const Header: FC<HeaderProps> = (props) => {
             </IconButton>
           )}
 
-          <Image src={logo} height={100} width={200} alt="logo" />
+          <Image src={logo} height={100} width={100} alt="logo" className={classes.logo_image} />
 
           {!isMobile && (
             <Grid
@@ -71,22 +79,34 @@ const Header: FC<HeaderProps> = (props) => {
               paddingLeft={20}
             >
               <Grid item xs={12} md={2}>
-                <Link href="/">HOME</Link>
+                <Link href="/" className={classes.header_navlinks}>
+                  HOME
+                </Link>
               </Grid>
               <Grid item xs={12} md={2}>
-                <Link href="/services">SERVICES</Link>
+                <Link href="/services" className={classes.header_navlinks}>
+                  SERVICES
+                </Link>
               </Grid>
               <Grid item xs={12} md={2}>
-                <Link href="/industry">INDUSTRY</Link>
+                <Link href="/industry" className={classes.header_navlinks}>
+                  INDUSTRY
+                </Link>
               </Grid>
               <Grid item xs={12} md={2}>
-                <Link href="/blog">BLOG</Link>
+                <Link href="/blog" className={classes.header_navlinks}>
+                  BLOG
+                </Link>
               </Grid>
               <Grid item xs={12} md={2}>
-                <Link href="/about">ABOUT US</Link>
+                <Link href="/about" className={classes.header_navlinks}>
+                  ABOUT US
+                </Link>
               </Grid>
               <Grid item xs={12} md={2}>
-                <Link href="/contact">CONTACT US</Link>
+                <Link href="/contact" className={classes.header_navlinks}>
+                  CONTACT US
+                </Link>
               </Grid>
             </Grid>
           )}
