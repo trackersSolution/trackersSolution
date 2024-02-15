@@ -33,10 +33,8 @@ const Header: FC<HeaderProps> = (props) => {
   const { classes } = useStyles();
   const isMobile = useMediaQuery("(max-width:600px)");
 
-  // State for handling drawer open/close
   const [drawerOpen, setDrawerOpen] = useState(false);
 
-  // Function to toggle drawer state
   const toggleDrawer = (open: boolean) => () => {
     setDrawerOpen(open);
   };

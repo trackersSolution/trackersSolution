@@ -32,11 +32,11 @@ const useStyles = makeStyles()((theme: Theme)=> ({
     margin: '20px',
     width: '100%',
     maxWidth: '500px',
-    boxShadow: '0 4px 8px rgba(0,0,0,0.1)', // Add box shadow for better depth
-    textAlign: 'center', // Center text content
+    boxShadow: '0 4px 8px rgba(0,0,0,0.1)', 
+    textAlign: 'center', 
   },
   infoText: {
-    marginBottom: '80px', // Add some spacing between text elements
+    marginBottom: '80px', 
   },
 }));
 

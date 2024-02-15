@@ -22,13 +22,13 @@ const Industry: FC<IndustryProps> = ({ item, count, image }) => {
         mt={4}
         p={4}
         sx={{
-          background: "#f9f9f9", // Light gray background
+          background: "#f9f9f9", 
           borderRadius: "8px",
           color: "black",
-          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", // Box shadow for depth
-          width: "90%", // Adjusted width to fit content better
-          maxWidth: "600px", // Maximum width for responsiveness
-          margin: "0 auto", // Center the box horizontally
+          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", 
+          width: "90%",
+          maxWidth: "600px", 
+          margin: "0 auto",
           display: "flex",
           flexDirection: "row",
           alignItems: "center",

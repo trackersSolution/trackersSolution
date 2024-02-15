@@ -5,7 +5,12 @@ import Image from "next/image";
 import logo from "../../../../../../public/logo.svg";
 
 const useStyles = makeStyles()((_theme: Theme) => ({
-  root: {},
+  root: {
+    borderRadius: "8px",
+    color: "black",
+    width: "100%",
+    maxWidth: "600px", 
+  },
   image: {
    color:'white'
   },
@@ -23,13 +28,7 @@ const About: FC<AboutProps> = (props) => {
 
   return (
     <Box
-      sx={{
-        // background: "linear-gradient(to right, #ff6666, #ff4d4d)",
-        borderRadius: "8px",
-        color: "black",
-        width: "100%",
-        maxWidth: "600px", // Limit maximum width for better responsiveness
-      }}
+     className={classes.root}
     >
       <Image
         src={logo}

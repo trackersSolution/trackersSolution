@@ -8,17 +8,17 @@ const useStyles = makeStyles()((_theme: Theme) => ({
     background: "linear-gradient(to right, #D9D9D9, #D9D9D0)",
     borderRadius: "8px",
     color: "white",
-    padding: "20px", // Increased padding for better spacing
-    margin: "20px 0", // Added margin for better separation between components
+    padding: "20px",
+    margin: "20px 0", 
     width: "100%",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)", // Added box shadow for depth effect
+    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)", 
   },
   image: {
-    marginBottom: "10px", // Added margin below the image
+    marginBottom: "10px", 
   },
 }));
 

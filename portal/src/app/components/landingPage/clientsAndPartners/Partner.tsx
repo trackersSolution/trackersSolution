@@ -19,20 +19,20 @@ const Partner: FC<PartnerProps> = ({ name, logo }) => {
     <div>
       <Box
         mt={4}
-        p={2} // Reduced padding for a more compact look
+        p={2} 
         sx={{
-          background: "#EFF5FF", // Changed to a lighter background color
+          background: "#EFF5FF",
           borderRadius: "8px",
-          boxShadow: "0 2px 4px rgba(0,0,0,0.1)", // Added a subtle box shadow
+          boxShadow: "0 2px 4px rgba(0,0,0,0.1)", 
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           width: "100%",
-          height: "150px", // Adjusted height for better image display
+          height: "150px", 
           margin: "20px",
         }}
       >
-        <Image src={logo!} alt={name!} height={120} width={180} /> {/* Centered image */}
+        <Image src={logo!} alt={name!} height={120} width={180} /> 
       </Box>
     </div>
   );

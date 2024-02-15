@@ -13,7 +13,6 @@ const useStyles = makeStyles()((_theme: Theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    // padding: '200px', // Added padding for spacing
   },
 }));
 
@@ -37,7 +36,6 @@ const ClientsAndPartners: FC<ClientsAndPartnersProps> = (props) => {
       </Typography>
       <Grid
         container
-        spacing={3} // Increased spacing for better separation between items
         justifyContent="center"
       >
         {clients.map(({ id, name, logo }) => (

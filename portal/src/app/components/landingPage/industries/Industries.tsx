@@ -10,17 +10,17 @@ const useStyles = makeStyles()((_theme: Theme) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: '20px', // Added padding for spacing
+    padding: '20px', 
     borderRadius: '10px',
     boxShadow: '0 0 10px rgba(0,0,0,0.1)',
     backgroundImage: `url(${industriesBackground})`,
-    backgroundSize: 'cover', // Ensure the image covers the entire background
-    backgroundColor: '#f9f9f9', // Light gray background
-    maxWidth: '1000px', // Maximum width for responsiveness
-    margin: '0 auto', // Center the component horizontally
+    backgroundSize: 'cover', 
+    backgroundColor: '#f9f9f9',
+    maxWidth: '1000px', 
+    margin: '0 auto', 
   },
   title: {
-    marginBottom: '20px', // Spacing below the title
+    marginBottom: '20px', 
   },
 }));
 

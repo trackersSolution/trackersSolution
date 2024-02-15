@@ -51,7 +51,7 @@ const ContactForm: React.FC = () => {
             label="Name"
             fullWidth
             margin="normal"
-            {...register("name")} // Here's the correct usage of register
+            {...register("name")} 
             error={!!errors.name}
             helperText={errors.name?.message}
             aria-invalid={errors.name ? "true" : "false"}
@@ -68,7 +68,7 @@ const ContactForm: React.FC = () => {
             helperText={errors.email?.message}
             aria-invalid={errors.email ? "true" : "false"}
             required
-            sx={{ marginBottom: "20px" }} // Add spacing between fields
+            sx={{ marginBottom: "20px" }}
           />
 
           <TextField
@@ -82,7 +82,7 @@ const ContactForm: React.FC = () => {
             helperText={errors.message?.message}
             aria-invalid={errors.message ? "true" : "false"}
             required
-            sx={{ marginBottom: "20px" }} // Add spacing between fields
+            sx={{ marginBottom: "20px" }}
           />
 
           <Button

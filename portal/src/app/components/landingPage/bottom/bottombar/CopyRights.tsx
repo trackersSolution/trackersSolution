@@ -10,7 +10,15 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import Link from 'next/link';
 
 const useStyles = makeStyles()((_theme: Theme) => ({
-  root: {},
+  root: {
+    background: 'black',
+    borderRadius: '8px',
+    color: 'white',
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    flexDirection: 'row',
+  },
 }));
 
 export interface CopyRightsProps {
@@ -24,15 +32,7 @@ const CopyRights: FC<CopyRightsProps> = (props) => {
     <Box
       mt={4}
       p={4}
-      style={{
-        background: 'black',
-        borderRadius: '8px',
-        color: 'white',
-        width: '100%',
-        display: 'flex',
-        justifyContent: 'center',
-        flexDirection: 'row',
-      }}
+  className={classes.root}
     >
       <Container>
         <Grid container direction="row" justifyContent="space-between" alignItems="center" alignContent="center" wrap="wrap" spacing={2}>
