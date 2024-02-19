@@ -5,6 +5,25 @@ import Image from "next/image";
 
 const useStyles = makeStyles()((_theme: Theme) => ({
   root: {},
+  image_box: {
+    background: "black",
+    padding: "10px",
+  },
+  image_main_box: {
+    textAlign: "right",
+  },
+  industry_typography: {
+    fontSize: "25px",
+    height: "150px",
+    padding: "20px 20px",
+    fontWeight: "600",
+  },
+  count_typo: {
+    fontWeight: 900,
+    fontSize: "2.725rem",
+    padding: "20px 20px",
+    color: "#caccd3",
+  },
 }));
 
 export interface IndustryProps {
@@ -20,31 +39,49 @@ const Industry: FC<IndustryProps> = ({ item, count, image }) => {
     <div>
       <Box
         mt={4}
-        p={4}
         sx={{
-          background: "#f9f9f9", 
+          background: "white",
           borderRadius: "8px",
           color: "black",
-          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", 
-          width: "90%",
-          maxWidth: "600px", 
-          margin: "0 auto",
-          display: "flex",
+          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+          width: "100%",
+          maxWidth: "600px",
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "space-between",
+          height: "303px",
         }}
       >
         <Box flex="1">
-          <Typography variant="h4" color="initial">
+          <Typography
+            variant="h4"
+            color="initial"
+            className={classes.count_typo}
+          >
             {count}
           </Typography>
-          <Typography variant="h5" color="initial">
+          <Typography
+            variant="h5"
+            color="initial"
+            className={classes.industry_typography}
+          >
             {item}
           </Typography>
         </Box>
-        <Box flex="1" display="flex" justifyContent="center" alignItems="center">
-          <Image src={image!} alt="image" height={200} width={300} />
+        <Box
+          flex="1"
+          display="flex"
+          justifyContent="right"
+          alignItems="center"
+          className={classes.image_main_box}
+        >
+          <Image
+            src={image!}
+            alt="image"
+            height={60}
+            width={60}
+            className={classes.image_box}
+          />
         </Box>
       </Box>
     </div>

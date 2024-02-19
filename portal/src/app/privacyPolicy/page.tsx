@@ -1,22 +1,18 @@
-'use client';
-import React, { FC } from 'react'
-import {Theme} from '@mui/material'
-import {makeStyles} from 'tss-react/mui'
+"use client";
+import React, { FC } from "react";
+// import { Theme } from "@mui/material";
+// import { makeStyles } from "tss-react/mui";
 
-const useStyles = makeStyles()((_theme: Theme) =>({
-    root:{}
-}));
+// const useStyles = makeStyles()((_theme: Theme) => ({
+//   root: {},
+// }));
 export interface pageProps {
-    text?: string
+  text?: string;
 }
 
-const Page: FC<pageProps> = ( props ) => {
-const { classes } = useStyles();
+const Page = () => {
+  // const { classes } = useStyles();
 
-  return (
-    <div>
-     hello world
-    </div>
-  )
-}
+  return <div>hello world</div>;
+};
 export default Page;

@@ -10,12 +10,14 @@ const useStyles = makeStyles()((_theme: Theme) => ({
     color: "black",
     width: "100%",
     maxWidth: "600px", 
+    
   },
   image: {
    color:'white'
   },
   content: {
-    color:'white'
+    color:'white',
+    // textAlign:"justify"
   },
 }));
 
