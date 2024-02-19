@@ -18,8 +18,6 @@ const Partner: FC<PartnerProps> = ({ name, logo }) => {
   return (
     <div>
       <Box
-        mt={4}
-        p={2} 
         sx={{
           background: "#EFF5FF",
           borderRadius: "8px",
@@ -28,11 +26,13 @@ const Partner: FC<PartnerProps> = ({ name, logo }) => {
           alignItems: "center",
           justifyContent: "center",
           width: "100%",
-          height: "150px", 
-          margin: "20px",
+          height: "100px", 
+          "&:hover": {
+            background: "#aeb4c4",
+          },
         }}
       >
-        <Image src={logo!} alt={name!} height={120} width={180} /> 
+        <Image src={logo!} alt={name!} height={150} width={180} /> 
       </Box>
     </div>
   );

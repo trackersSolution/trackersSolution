@@ -19,6 +19,9 @@ const useStyles = makeStyles()((_theme: Theme) => ({
     justifyContent: 'center',
     flexDirection: 'row',
   },
+  icon_padding: {
+    padding:"0px 25px"
+  }
 }));
 
 export interface CopyRightsProps {
@@ -30,46 +33,46 @@ const CopyRights: FC<CopyRightsProps> = (props) => {
 
   return (
     <Box
-      mt={4}
-      p={4}
+      // mt={4}
+      // p={4}
   className={classes.root}
     >
       <Container>
         <Grid container direction="row" justifyContent="space-between" alignItems="center" alignContent="center" wrap="wrap" spacing={2}>
           <Grid item xs={12} md={6}>
             <Typography variant="body2" align="left">
-              © {new Date().getFullYear()} CopyRights : Trackers.ae reserved
+              © {new Date().getFullYear()} CopyRights: trackers.ae reserved.
             </Typography>
           </Grid>
           <Grid item xs={12} md={6} container justifyContent="flex-end">
-            <Grid item>
+            <Grid item className={classes.icon_padding}>
               <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                <XIcon/>
+                <XIcon fontSize='large'/>
               </Link>
             </Grid>
-            <Grid item>
+            <Grid item className={classes.icon_padding}>
               <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                <FacebookIcon/>
+                <FacebookIcon fontSize='large'/>
               </Link>
             </Grid>
-            <Grid item>
+            <Grid item className={classes.icon_padding}>
               <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                <LinkedInIcon/>
+                <LinkedInIcon fontSize='large'/>
               </Link>
             </Grid>
-            <Grid item>
+            <Grid item className={classes.icon_padding}>
               <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                <InstagramIcon/>
+                <InstagramIcon fontSize='large'/>
               </Link>
             </Grid>
-            <Grid item>
+            <Grid item className={classes.icon_padding}>
               <Link href="https://telegram.org" target="_blank" rel="noopener noreferrer">
-                <TelegramIcon/>
+                <TelegramIcon fontSize='large'/>
               </Link>
             </Grid>
-            <Grid item>
+            <Grid item className={classes.icon_padding}>
               <Link href="https://youtube.com" target="_blank" rel="noopener noreferrer">
-                <YouTubeIcon/>
+                <YouTubeIcon fontSize='large'/>
               </Link>
             </Grid>
           </Grid>
